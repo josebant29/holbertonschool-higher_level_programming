@@ -6,15 +6,21 @@ Square Module - for all your needs, as long as they include printing squares!
 
 class Square:
     """
-    Square class, now setting your size to 0 if you don't provide it, and doing
-    basic error checking!
+    Square class: now enabling you to print out the area of the square!
+    Revolutionary!
     """
     def __init__(self, size=0):
         """
-        Init for the Square class. Basic error checking for int size.
+        Init for Square class. Requires a valid integer size.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
+
+    def area(self):
+        """
+        Returns the area of the square (size ** 2)
+        """
+        return (self.__size ** 2)

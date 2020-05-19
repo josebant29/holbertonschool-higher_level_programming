@@ -1,5 +1,15 @@
 #!/usr/bin/python3
-class Square:
-    def __init__(self, size):
-        self.__size = size
+"""
+Square Module - for all your needs, as long as they include printing squares!
+"""
 
+
+class Square:
+    """
+    Square class: now taking in a size!
+    """
+    def __init__(self, size):
+        """
+        Square init!
+        """
+        self.__size = size

@@ -1,3 +1,11 @@
 #!/usr/bin/python3
-    class Square:
-        pass
+"""
+Square Module - for all your needs, as long as they include printing squares!
+"""
+
+
+class Square:
+    """
+    First pass at creating a square class!
+    """
+    pass

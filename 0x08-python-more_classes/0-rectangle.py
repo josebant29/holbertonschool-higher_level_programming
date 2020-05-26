@@ -1,3 +1,7 @@
 #!/usr/bin/python3
-class Square:
+"""module: 0-rectangle"""
+
+
+class Rectangle:
+    """class: Rectangle"""
     pass

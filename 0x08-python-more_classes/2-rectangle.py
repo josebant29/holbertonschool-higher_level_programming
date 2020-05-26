@@ -1,20 +1,23 @@
 #!/usr/bin/python3
+"""module: 1-rectangle"""
+
+
 class Rectangle:
-    """ Init Class width set 0 and height set 0"""
+    """class: Rectangle"""
     def __init__(self, width=0, height=0):
-        """ Constructor """
+        """init: self, width, height"""
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
-        """ Width Getter """
+        """property: width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Width Setter """
-        if not isinstance(value, int):
+        """setter: width"""
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -22,25 +25,24 @@ class Rectangle:
 
     @property
     def height(self):
-        """ Height Getter """
+        """property: height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ Height Setter """
-        if not isinstance(value, int):
+        """setter:height"""
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
-        """ Calculate Area """
-        return (self.__height * self.__width)
+        """public instance method: area"""
+        if self.__width or self.__height:
+            return self.__width * self.__height
 
     def perimeter(self):
-        """ Calculate Perimeter """
-        if self.__height == 0 or self.__width == 0:
-            return 0
-        else:
-            return ((self.__height * 2) + (self.__width * 2))
+        """public instance method: perimeter"""
+        if self.__width or self.__height:
+            return (self.__width * 2) + (self.__height * 2)

@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+'''Module for task 1'''
+
+
 class MyList(list):
-    """
-    Class Mylist inherits list
-    """
+    '''Subclass of list'''
 
     def print_sorted(self):
-        """
-        prints the list, but sorted
-        """
+        '''Print a list in sorted ascending'''
         print(sorted(self))

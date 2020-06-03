@@ -1,23 +1,24 @@
 #!/usr/bin/python3
-
-""" Class that inherits from BaseGeometry """
+'''Module for multi-level inheritance'''
 
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """ class Square that inherits from Rectangle """
+    '''Inherits from Rectangle'''
 
     def __init__(self, size):
-        """ Constructor """
-        self.__size = size
-        self.integer_validator("size", size)
+        '''Constructor'''
+        self.integer_validator('size', size)
+
         super().__init__(size, size)
+        self.__size = size
 
     def area(self):
-        """ Calculator area """
-        return super().area()
+        '''Calculates the area of a square'''
+        return self.__size * self.__size
 
     def __str__(self):
-        """ Print info """
-        return "[Square] {:d}/{:d}".format(self.__size, self.__size)
+        '''Return the square representation'''
+        msg = '[Square] {}/{}'.format(self.__size, self.__size)
+        return msg

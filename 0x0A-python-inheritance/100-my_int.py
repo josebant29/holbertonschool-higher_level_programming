@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-"""
-class
-My int
-"""
+'''Module for advanced'''
 
 
 class MyInt(int):
-    """ Change eq and ne"""
-    def __eq__(self, num):
-        """ Change == to !="""
-        return int(self) != int(num)
+    '''Rebel class'''
 
-    def __ne__(self, num):
-        """ Change != to =="""
-        return int(self) == int(num)
+    def __eq__(self, other):
+        '''Override == operator'''
+        return not (self is not other)
+
+    def __ne__(self, other):
+        '''Override != operator'''
+        return (self is not other)

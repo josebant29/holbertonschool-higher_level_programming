@@ -12,4 +12,4 @@ class Square:
         """
         Square init!
         """
-        self.__size = size
+        self.size = size

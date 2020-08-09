@@ -1,18 +1,13 @@
-# !/usr/bin/python3
-"""Module for states table"""
-from sqlalchemy import Table, Column, Integer, String
+#!/usr/bin/python3
+"""Class definition of a State and an instance Base = declarative_base()"""
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
 
-class State(Base):
-    """A class for state"""
+class State (Base):
+    '''State class for table states'''
     __tablename__ = 'states'
-
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-
-    def __repr__(self):
-        """Object Representation"""
-        return "<States(name =' %s')>" % (self.name)

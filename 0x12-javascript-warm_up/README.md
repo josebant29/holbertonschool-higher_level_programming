@@ -1,1 +1,1 @@
-js
+# Javascript introduction / warm-up

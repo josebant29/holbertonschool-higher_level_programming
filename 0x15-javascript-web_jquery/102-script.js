@@ -1,10 +1,11 @@
-window.onload = function () {
-  $('INPUT#btn_translate').click(function () {
-    const leng = $('INPUT#language_code').val();
-    const url = 'https://fourtonfish.com/hellosalut/?lang=' + leng;
-    console.log(url);
-    $.get(url, function (data) {
-      $('DIV#hello').text(data.hello);
+$(function () {
+  $('#btn_search').click(function () {
+    $.get('https://query.yahooapis.com/v1/public/yql?q=select%20wind%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22' + $('#city_search').val() + '%22)&format=json', function (data, textStatus) {
+      if (textStatus === 'success' && data.query.results !== null) {
+        $('#wind_speed').text(data.query.results.channel.wind.speed);
+      } else {
+        $('#wind_speed').text('Invalid city');
+      }
     });
   });
-};
+});
